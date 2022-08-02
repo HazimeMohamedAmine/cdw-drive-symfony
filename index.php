@@ -1,16 +1,16 @@
 <?php
 
 //On essaie de définir la fonction en paramétre de spl_autoload_register de telle façon quelle fonctionne comme un (require 'classes/Calcul.php')
-spl_autoload_register(
-    function ($className) {
-        $className = str_replace("App", "classes", $className);
-        $className = str_replace("\\", "/", $className);
-        $className .= ".php";
+// spl_autoload_register(
+//     function ($className) {
+//         $className = str_replace("App", "src", $className);
+//         $className = str_replace("\\", "/", $className);
+//         $className .= ".php";
 
-        require_once $className;
-    }
-);
-
+//         require_once $className;
+//     }
+// );
+require "vendor/autoload.php";
 // require 'classes/Calcul.php';
 
 // use et require_once sont des choses complètement différentes. use ne fait aucune importation de fichier. l'utilisation ne fait que vous faciliter la vie. Au lieu d'écrire Full\Path\To\Class à chaque fois, vous pouvez faire
