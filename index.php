@@ -10,6 +10,9 @@
 //         require_once $className;
 //     }
 // );
+
+use Carbon\Carbon;
+
 require "vendor/autoload.php";
 // require 'classes/Calcul.php';
 
@@ -19,7 +22,8 @@ require "vendor/autoload.php";
 // use App\Calcul;
 
 $instance = new App\Calcul(); // A ce moment preci la fonction spl_autoload_register sera appelé on a fait le test avec var_dump
-
+$aujourdhui = Carbon::now(); //Utilisation de la librairie Carbonne
+var_dump($aujourdhui->format('d/m/Y'));
 $resultat = $instance->additionner(10, 40);
 var_dump($resultat);
 echo "<br>";
